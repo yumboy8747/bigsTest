@@ -22,8 +22,15 @@ export const SideBar = ({ current, view}) => {
 		<SideBarWrapper style={{ display: view ? 'block' : 'none' }}>
 
 			<UserInfoWrapper>
-				<UserName>{ '이름 : ' + localStorage.getItem('LOCAL@NAME') } </UserName>
-				<UserName>{ '아이디 : ' +   localStorage.getItem('LOCAL@USERNAME') } </UserName>
+				<UserLabel>
+					Name
+					<UserName>{ localStorage.getItem('LOCAL@NAME') } </UserName>
+				</UserLabel>
+
+				<UserLabel>
+					ID
+					<UserName>{ localStorage.getItem('LOCAL@USERNAME') } </UserName>
+				</UserLabel>
 			</UserInfoWrapper>
 
 
@@ -62,10 +69,6 @@ export const SideBar = ({ current, view}) => {
 export default React.memo(SideBar)
 
 
-const MenuWrapper = styled.div`
-	padding: 0 12px;
-`
-
 export const Menu = styled.div<{ openMenu: boolean }>`
   width: 200px;
   height: 49px;
@@ -91,40 +94,15 @@ export const Menu = styled.div<{ openMenu: boolean }>`
 
 
 
-const HomeLogoSection = styled.div`
-  width: 100%;
-  display: flex;
-	padding: 30px 0 28px 50px;
-
-	border-bottom: 1px solid #3E346B;
-`
-
 const UserInfoWrapper = styled.div`
 	padding: 33px 0px 30px 20px;
 	border-bottom: 1px solid #3E346B;
-`
-
-const ItemListLine = styled.div`
-	border-bottom: 1px solid #3E346B;
-	width: 100%;
-	margin: 14px 0;
-`
-
-const UserTypeBadge = styled.div`
-	height: 21px;
-	width: 46px;
-	border-radius: 4px;
-	background-color: #00000080;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 6px;
 	
-	color: white;
-	font-weight: 500;
-	font-size: 13px;
-	line-height: 15.51px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 `
+
 
 
 const UserName = styled.div`
@@ -137,12 +115,12 @@ const UserName = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 5px;
-	padding-left: 4px;
-	margin-bottom: 20px;
 `
 
-const UserSettingIconSVG = styled.svg`
-	cursor: pointer;
+const UserLabel = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 `
 
 
