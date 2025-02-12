@@ -1,0 +1,1 @@
+export const API_URL = 'https://front-mission.bigs.or.kr' // API URL

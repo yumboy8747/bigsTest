@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'nanumSquareNeo';
+  font-style: normal;
+  src: url(./fonts/NanumSquareNeo-Variable.woff);
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  src: url(./fonts/PretendardVariable.ttf);
+}
